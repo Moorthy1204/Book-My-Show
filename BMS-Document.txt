@@ -307,7 +307,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/KastroVKiran/Book-My-Show.git'
+                git branch: 'main', url: 'https://github.com/Moorthy1204/Book-My-Show.git'
                 sh 'ls -la'  // Verify files after checkout
             }
         }
@@ -818,3 +818,4 @@ Click on Dashboards in the left pane, you can see both the dashboards you have j
 Final:
 
 Delete all the resources created
+
