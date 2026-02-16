@@ -59,10 +59,15 @@ pipeline {
             }
         }
         stage('Trivy FS Scan') {
-            steps {
-                sh 'trivy fs . > trivyfs.txt'
+             steps {
+                sh '''
+                docker run --rm \
+                -v $(pwd):/app \
+                aquasec/trivy:latest fs /app > trivyfs.txt
+                '''
+                }
             }
-        }
+
         stage('Docker Build & Push') {
             steps {
                 script {
